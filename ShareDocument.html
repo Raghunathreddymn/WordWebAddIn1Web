@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="Scripts/jquery-3.6.0.js" type="text/javascript"></script>
+    <script src="Scripts/MessageBanner.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        function mail() {
+            console.log("before");
+            //document.getElementById("txtTo").innerHTML.value = Word.Document.name;
+            // var url = "https://btserviceapiappservice.azurewebsites.net/api/Configuration/sendforreview";
+
+            // var xhr = new XMLHttpRequest();
+            // xhr.open("POST", url);
+
+            // xhr.setRequestHeader("Accept", "application/json");
+            // xhr.setRequestHeader("Content-Type", "application/json");
+
+            // xhr.onreadystatechange = function () {
+            //     if (xhr.readyState === 4) {
+            //         console.log(xhr.status);
+            //         console.log(xhr.responseText);
+            //     }
+            // };
+            // let referenceid = CreateGuid();
+
+            // //let emailids = document.getElementById("txtTo").value;
+            // //let message = document.getElementById("txtMessage").value;
+            // let link = "https://blueed-my.sharepoint.com/:w:/g/personal/raghunath_mn_blueed_onmicrosoft_com/EYw8Z4FuHetEqom_atHoFZIBkYcjw5Eg0Hl5QJgs2TITTw?e=wWhBTe";
+            // var data = `{"documentReferenceID":"fa5bd-adc4-4831-9040-8eab8386eba3","emailIDs":"raghunath.mn@blueed.onmicrosoft.com"
+            //     ,"message": "Please review the document" ,"link": "link "}`;
+
+            //// xhr.send(data);
+
+
+
+
+        }
+        function CreateGuid() {
+            function _p8(s) {
+                var p = (Math.random().toString(16) + "000000000").substr(2, 8);
+                return s ? "-" + p.substr(0, 4) + "-" + p.substr(4, 4) : p;
+            }
+            return _p8() + _p8(true) + _p8(true) + _p8();
+        }
+    </script>
+    <script src="Scripts/MessageBanner.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+
+    <!-- To enable offline debugging using a local reference to Office.js, use:  -->
+    <!-- <script src="Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>  -->
+    <!-- <script src="Scripts/Office/1/office.js" type="text/javascript"></script>  -->
+    <!--<script src="ShareDocument.js" type="text/javascript"></script>-->
+    <link href="Home.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/Button.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/MessageBanner.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body class="ms-Fabric" dir="ltr">
+    <div id="content-sub">
+        <div class="padding">
+            <label id="lblTo">To<br /><br /><textarea id="txtTo" rows="4" cols="50"></textarea></label>
+            <br />
+            <br />
+            <input type="checkbox" id="chk" name="fav_language" value="HTML">
+            <label for="chk">Share the document to different Bargaining Table</label>
+            <br />
+            <br />
+            <label id="lblmessage">Message<br /><textarea id="txtMessage" rows="4" cols="50"></textarea></label>
+            <br />
+            <br />
+            <button id="btnreview" onclick="mail()">Send for Review</button>
+            <br />
+        </div>
+    </div>
+</body>
+</html>
